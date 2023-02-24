@@ -147,17 +147,20 @@ const fenomenler = [
 /* Görev 1 (otomatik kontrol testi yapılmayacak):
 Aşağıdakileri konsolda gösterim (console.log) işlemi gerçekleştirerek, yukarıda verilen fenomenler dizisindeki verilere erişim alıştırması yapın:
 
-(işlev yazmanıza gerek yok) */
+*/
+
+console.log(fenomenler); 
 
 //(1) Dizideki ilk fenomen (0. dizin) profil (profile) adı
 
 
-console.log(fenomenler[0]["profile"]);
+console.log(fenomenler[0].profile);
 
 
 //(2) Dizideki üçüncü fenomenin (2. dizin) takipçi (followers) sayısı
 
-console.log(fenomenler[2]["followers"]);
+console.log(fenomenler[2].followers);
+
 
 /* Görev 2 (otomatik kontrol testi yapılmayacak):
 (işlev yazmanıza gerek yok)
@@ -166,8 +169,9 @@ Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bi
 */
 
 
-fenomenler[6].profile = "Justin Bieber";
+fenomenler[fenomenler.findIndex(x=> x.profile ===  "Justin Biber")].profile =  ( "Justin Bieber" ) ;
 console.log(fenomenler[6].profile);
+
 
 /*  Görev 3:
 Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
@@ -178,13 +182,15 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
-function indekseGoreFenomen(kisiProfili, indeks) {
-// const newProfil = kisiProfili[3]
-  return indeks + ' indekste bulunan fenomen: ' + kisiProfili[indeks].profile;
-  //const kisiIsmi = kisiProfili[indeks].profile;
-	//const musteriPuani = degerlendirmelerDizisi[diziElemaniArrayIndex].puan;
-	//const musteriGeriBildirimi = degerlendirmelerDizisi[diziElemaniArrayIndex].geribildirim;
+//function indekseGoreFenomen(kisiProfili, indeks) {
+ // return indeks + ' indekste bulunan fenomen: ' + kisiProfili[indeks].profile;
+//}
 
+
+function indekseGoreFenomen(kisifenomenler, kisiProfiliIndex) {
+const fenomenProfil = kisifenomenler[kisiProfiliIndex].profile;
+
+	return kisiProfiliIndex + ' indekste bulunan fenomen: ' + fenomenProfil;
 }
 console.log(indekseGoreFenomen(fenomenler, 3));
 
@@ -250,21 +256,24 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-
 function fenomenEkle(fenomenlerAyse, number1, profile2, followers3, posts4, platform5) {
-  fenomenlerAyse = [...fenomenler];
-	fenomenlerAyse.push({ 
-    "number": number1,
-    "profile": profile2,
-    "followers":  followers3,
-    "posts": posts4,
-    "platform": platform5
-	});
-  return fenomenlerAyse;
+// fenomenlerAyse = [...fenomenler];
+const buBirDiziFemo = [...fenomenlerAyse];
+buBirDiziFemo.push({ 
+  "number": number1,
+  "profile": profile2,
+  "followers":  followers3,
+  "posts": posts4,
+  "platform": platform5
+});
+return buBirDiziFemo;
 }
 
+//const fenomenlerAyse = [...fenomenler];
 
 console.log(fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram"));
+
+
 
 /* Görev 7:
 Aşağıdakileri yapmak için enFenomenler'yi kullanın:
