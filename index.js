@@ -196,9 +196,13 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 3. Yeni dizinin üzerinde dolaşın ve dizinin her bir indeksinde yalnızca fenomenin adına eşit olacak şekilde güncelleyin
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
-function profilListesi(){
+function profilListesi(justFenomen) {
+  
 
 }
+
+console.log(profilListesi(fenomenler));
+
 //function profilListesi(parametre_ayse) {
  // let parametre_ayse = [...fenomenler];
   //return parametre_ayse;
@@ -218,7 +222,7 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 let buBirDizi = [...fenomenler];
 function fenomenSil(issizFenomen) {
   
-  issizFenomen.shift[0];
+  issizFenomen.shift();
   return  issizFenomen;
 }
 
@@ -242,10 +246,9 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-function fenomenEkle(/*kod*/) {
-  /*kod*/
-}
+
 function fenomenEkle(fenomenler, number, profile, followers, posts, platform) {
+  
 	return { 
     "number": 6,
     "profile": "Workintech",
@@ -253,9 +256,12 @@ function fenomenEkle(fenomenler, number, profile, followers, posts, platform) {
     "posts": 2022,
     "platform": "Instagram"
 	};
-  const birYeniDizi = [...fenomenler, " "];
+  
 }
-console.log(fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram"));
+
+const birYeniDizi = [...fenomenler];
+
+console.log(fenomenEkle(birYeniDizi, 6, "Workintech", 10000000, 2022, "Instagram"));
 
 /* Görev 7:
 Aşağıdakileri yapmak için enFenomenler'yi kullanın:
@@ -265,9 +271,17 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+function enFenomenler(degerlendirmelerDizisi, followersFenomen) {
+  const newObject = [];
+  for (let i=0; i<degerlendirmelerDizisi.length; i++)
+		if(Math.floor(degerlendirmelerDizisi[i].followers) === followersFenomen)
+		    newObject.push(degerlendirmelerDizisi[i]);
+		    return newObject;
 }
+
+console.log(enFenomenler(fenomenler, 100000000));
+
+
 
 
 /* Görev 8:
@@ -279,9 +293,16 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
 
-function fenomenGonderimSayisi(/*kod*/){
-  /*kod*/
-}
+function fenomenGonderimSayisi(fenomenParametre, profile) {
+  // this.profile = this.posts
+    //
+    posts = profile.valueOf();
+    return posts;
+} 
+  
+
+console.log(fenomenGonderimSayisi(fenomenler, "Will Smith"));
+
 
 
 
