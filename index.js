@@ -196,7 +196,9 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 3. Yeni dizinin üzerinde dolaşın ve dizinin her bir indeksinde yalnızca fenomenin adına eşit olacak şekilde güncelleyin
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
+function profilListesi(){
 
+}
 //function profilListesi(parametre_ayse) {
  // let parametre_ayse = [...fenomenler];
   //return parametre_ayse;
@@ -213,14 +215,14 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
 
-function fenomenSil(issizFenomen, numara) {
-  const exitIndex = issizFenomen.indexOf(numara);
-  issizFenomen.splice(exitIndex, 1);
+let buBirDizi = [...fenomenler];
+function fenomenSil(issizFenomen) {
+  
+  issizFenomen.shift[0];
   return  issizFenomen;
 }
 
-const yeniDizi = [...fenomenler];
-console.log(yeniDizi, 0);
+console.log(fenomenSil(buBirDizi));
 
 
 /* Görev 6:
@@ -243,7 +245,7 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 function fenomenEkle(/*kod*/) {
   /*kod*/
 }
-function MenuElemaniOlustur(number, profile, followers, posts, platform) {
+function fenomenEkle(fenomenler, number, profile, followers, posts, platform) {
 	return { 
     "number": 6,
     "profile": "Workintech",
@@ -251,8 +253,9 @@ function MenuElemaniOlustur(number, profile, followers, posts, platform) {
     "posts": 2022,
     "platform": "Instagram"
 	};
+  const birYeniDizi = [...fenomenler, " "];
 }
-console.log(MenuElemaniOlustur())
+console.log(fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram"));
 
 /* Görev 7:
 Aşağıdakileri yapmak için enFenomenler'yi kullanın:
