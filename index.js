@@ -147,9 +147,8 @@ const fenomenler = [
 /* Görev 1 (otomatik kontrol testi yapılmayacak):
 Aşağıdakileri konsolda gösterim (console.log) işlemi gerçekleştirerek, yukarıda verilen fenomenler dizisindeki verilere erişim alıştırması yapın:
 
-*/
+(işlev yazmanıza gerek yok) */
 
-console.log(fenomenler); 
 
 //(1) Dizideki ilk fenomen (0. dizin) profil (profile) adı
 
@@ -168,9 +167,11 @@ Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bi
 
 */
 
-
-fenomenler[fenomenler.findIndex(x=> x.profile ===  "Justin Biber")].profile =  ( "Justin Bieber" ) ;
+fenomenler[6].profile = "Justin Bieber"
 console.log(fenomenler[6].profile);
+
+// fenomenler[fenomenler.findIndex(x=> x.profile ===  "Justin Biber")].profile =  ( "Justin Bieber" ) ;
+// console.log(fenomenler[6].profile);
 
 
 /*  Görev 3:
@@ -188,9 +189,8 @@ NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA
 
 
 function indekseGoreFenomen(kisifenomenler, kisiProfiliIndex) {
-const fenomenProfil = kisifenomenler[kisiProfiliIndex].profile;
-
-	return kisiProfiliIndex + ' indekste bulunan fenomen: ' + fenomenProfil;
+  /*kod*/
+	return kisiProfiliIndex + ". indekste bulunan fenomen: " + kisifenomenler[kisiProfiliIndex].profile;
 }
 console.log(indekseGoreFenomen(fenomenler, 3));
 
